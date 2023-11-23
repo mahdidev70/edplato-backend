@@ -2,12 +2,10 @@ runtime: php
 env: flex
 
 runtime_config: 
+   operating_system: "ubuntu22"
    document_root: public
 
 # Ensure we skip ".env", which is only for local development
-skip_files: 
-    - .env
-
 automatic_scaling:
     min_num_instances: 1
     max_num_instances: 1
@@ -25,3 +23,6 @@ env_variables:
     APP_NAME: "GCP App - CODE"
 
     LOG_LEVEL: debug
+
+build_env_variables:
+    GOOGLE_COMPOSER_VERSION: 2.2.1
